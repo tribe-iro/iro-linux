@@ -1,0 +1,7 @@
+schema_version = "1.5"
+set = "multi_unit"
+includes = ["probe_types.h"]
+
+[types.common]
+c_type = "struct common_type"
+fields = ["a", "b"]

@@ -1,0 +1,11 @@
+schema_version = "1.5"
+set = "negative_enum_explicit"
+includes = ["probe_types.h"]
+
+[types.sample]
+c_type = "struct sample_struct"
+fields = ["x"]
+
+[enums.sample]
+c_type = "enum sample_enum"
+values = ["SAMPLE_NEG_ONE", "SAMPLE_NEG_BIG", "SAMPLE_POS"]

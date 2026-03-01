@@ -1,0 +1,12 @@
+config IRO_CXX
+	bool "Enable IRO C++ integration"
+	help
+	  Enable IRO tooling and generated layout headers for C++ consumers.
+
+config IRO_STRICT
+	bool "Enable strict IRO enforcement"
+	depends on IRO_CXX
+	help
+	  Enforce depfile gating and verify mode in the build to ensure C++
+	  translation units do not include kernel headers and layout drift is
+	  detected.

@@ -1,0 +1,41 @@
+# IRO Sample Manifest (IML v1.5)
+# This manifest demonstrates basic IRO layout tracking.
+
+schema_version = "1.5"
+set = "sample"
+
+# Required kernel headers providing the types we track
+includes = [
+  "linux/types.h",
+  "linux/list.h",
+]
+
+# Target architecture(s) for which this manifest is valid
+[target]
+arch = ["x86_64", "aarch64"]
+
+# Options controlling manifest validation behavior
+[options]
+bitfield_policy = "geometry"
+allow_anonymous_members = true
+allow_nested_designators = true
+allow_array_subscripts = true
+strict = true
+
+# struct list_head - fundamental kernel linked list node
+# Defined in include/linux/types.h
+[types.list_head]
+c_type = "struct list_head"
+fields = ["next", "prev"]
+
+# struct hlist_node - hash list node
+# Defined in include/linux/types.h
+[types.hlist_node]
+c_type = "struct hlist_node"
+fields = ["next", "pprev"]
+
+# struct hlist_head - hash list head
+# Defined in include/linux/types.h
+[types.hlist_head]
+c_type = "struct hlist_head"
+fields = ["first"]

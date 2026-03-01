@@ -1,0 +1,5 @@
+# Local tooling config
+.claude/
+
+# Backup files
+*.bak
